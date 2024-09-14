@@ -9,7 +9,7 @@ const inventory = [
 
 // Created a function to Display product Details TASK 2
 function displayProductDetails(inventory) {
-    let stockStatus = inventory.quantity <= inventory.lowStockLevel ? 'Low Stock' : 'In Stock' //Notes: inventory.quantity so that it is gathered from object {}
+    let stockStatus = inventory.quantity <= inventory.lowStockLevel ? 'Low in Stock' : 'In Stock' //Notes: inventory.quantity so that it is gathered from object {}
 
     return `${inventory.name} is ${stockStatus}` //Note: return is not similar to console.log, but it will be the result for console.log of the function
 
@@ -21,5 +21,12 @@ console.log(`Price: ${inventory[0].price}`);
 console.log(`Quantity: ${inventory[0].quantity}`);
 console.log(`Availability: ${displayProductDetails(inventory[0])}`);
 
+// TASK 3: Create a function to Update Product Stock After Sales
+function updateStock (inventory, unitsSold) {
+    let newStock = inventory.quantity -= unitsSold 
+    return `Updated ${inventory.name} quantity after sales is: ${newStock}`
+}
 
+console.log(updateStock(inventory[0], 45))
+console.log(`Product Availability: ${displayProductDetails(inventory[0])}`);
 
