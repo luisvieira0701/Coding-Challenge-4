@@ -1,4 +1,4 @@
-// Initialize inventory with product objects
+// Initialize inventory with product objects TASK1 
 const inventory = [
     {name: 'Basketball', price: 150, quantity: 50, lowStockLevel: 10},
     {name: 'Soccerball', price: 120, quantity: 35, lowStockLevel: 5},
@@ -7,7 +7,19 @@ const inventory = [
     {name: 'Pickleball', price: 15, quantity: 60, lowStockLevel: 50}
 ];
 
+// Created a function to Display product Details TASK 2
+function displayProductDetails(inventory) {
+    let stockStatus = inventory.quantity <= inventory.lowStockLevel ? 'Low Stock' : 'In Stock' //Notes: inventory.quantity so that it is gathered from object {}
 
+    return `${inventory.name} is ${stockStatus}` //Note: return is not similar to console.log, but it will be the result for console.log of the function
+
+}
+
+console.log('Product details are as following:');
+console.log(`Product: ${inventory[0].name}`); // [0] is to pull from the first product: basketball
+console.log(`Price: ${inventory[0].price}`);
+console.log(`Quantity: ${inventory[0].quantity}`);
+console.log(`Availability: ${displayProductDetails(inventory[0])}`);
 
 
 
