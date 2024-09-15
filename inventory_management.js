@@ -39,8 +39,9 @@ function updateStock (inventory, unitsSold) {
     return `Updated ${inventory.name} quantity after sales is: ${newStock}`
 }
 
-console.log(updateStock(inventory[0], 45))
-console.log(`Basketball Availability: ${DetermineLowStock(inventory[0])}`);
+console.log(`${updateStock(inventory[0], 45)}
+Basketball Availability: ${DetermineLowStock(inventory[0])}`)
+
 
 
 //TASK 4: Create a Function to Check Low Stock Products
@@ -53,4 +54,14 @@ function checkLowStock (inventory) {
 
 let LowStockArray = checkLowStock(inventory)
 console.log(LowStockArray)
+
+//Task 5 Create a Function to Calculate Total Inventory Value
+function calculateTotalValue () {
+    return inventory.reduce((total, inventory) => {
+        return total + (inventory.price * inventory.quantity)},0)};
+
+
+let totalInventoryValue = calculateTotalValue()
+console.log(`Total Inventory Value is: ${totalInventoryValue}`);
+
 
