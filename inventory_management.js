@@ -10,7 +10,7 @@ const inventory = [
 // TASK 2 Created a function to Display product Details 
 function displayProductDetails(inventory) {
     return inventory.forEach(inventory => console.log(`Product: ${inventory.name}
-        Price: ${inventory.price}
+        Price: $${inventory.price}
         Quantity: ${inventory.quantity}
         Low Stock Level:${inventory.lowStockLevel}`))
     }
@@ -44,6 +44,7 @@ Basketball Availability: ${DetermineLowStock(inventory[0])}`)
 
 
 
+
 //TASK 4: Create a Function to Check Low Stock Products
 function checkLowStock (inventory) {
     inventory.forEach(inventory => {
@@ -62,6 +63,17 @@ function calculateTotalValue () {
 
 
 let totalInventoryValue = calculateTotalValue()
-console.log(`Total Inventory Value is: ${totalInventoryValue}`);
+console.log(`Total Inventory Value is: $${totalInventoryValue}`);
 
 
+//Task 6 Create a Function to Process a sale 
+function processSalebyName(productName, unitsSold) {
+    var productName = inventory.find((product => {inventory.name === product}))
+    if (productName) {
+        return updateStock(productName, unitsSold);
+    } else {
+        return (`${productName} is currently not in Inventory`);
+    };
+}
+
+console.log(`${processSalebyName('Tennisball', 6)}`)
